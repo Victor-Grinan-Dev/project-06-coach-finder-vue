@@ -38,7 +38,7 @@ export default {
       password: "",
       formIsValid: true,
       mode: "login",
-      charsLong: 8,
+      charsLong: 6,
       isLoading: false,
       error: null,
     };
@@ -74,6 +74,7 @@ export default {
         } else {
           await this.$store.dispatch("signup", actionPayload);
         }
+        this.$router.replace("/coaches");
       } catch (err) {
         this.error = err.message || "Failed to authenticate";
       }
